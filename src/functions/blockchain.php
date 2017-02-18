@@ -6,7 +6,7 @@ include_once('./src/functions/config.php');
   Call local Blockchain API web service running
 
 */
-function call_api ($url, $params)
+function call_api ($url, $params = [])
 {
     $params["api_code"] = blockchain_config("api_code");
     $url_base = "http://127.0.0.1:".blockchain_config("api_port")."/". $url ."?". http_build_query($params);
