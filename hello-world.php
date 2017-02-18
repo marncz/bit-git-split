@@ -8,4 +8,6 @@ echo "<pre>";
 // print_r( get_repo_contributors() );
 print_r( get_bitcoin_contributors() );
 print_r( divide_et_impera(0.005) );
+
+update_bc_config("base_bitcoin", "test_LOL");
 ?>

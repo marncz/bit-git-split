@@ -8,7 +8,7 @@ include_once('./src/functions/config.php');
 */
 function call_blockchain_api ($url, $params = [])
 {
-    $params["api_code"] = bc_config("api_code");
+    $params["api_code"] = bc_config("blockchain_api");
     $url_base = "http://127.0.0.1:".bc_config("api_port")."/". $url ."?". http_build_query($params);
 
     $ch = curl_init();
@@ -57,13 +57,6 @@ function send_bitcoin($address, $amount)
 
     $response = call_bitcoin_api("/merchant/".bc_config('wallet_guid')."/payment", $params);
     return $response;
-}
-
-
-function update_bc_config ($find, $replace){
-
-  $file = "../../config/blockchain.php";
-
 }
 
 

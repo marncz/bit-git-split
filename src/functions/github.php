@@ -1,13 +1,11 @@
 <?php
-include_once('./src/functions/config.php');
-include_once('./src/functions/blokchain.php');
-
+include_once('config.php');
 /*
   Simple HTTP GET call to the GitHub API
 */
 function call_github_api ($url, $params = array() ) {
 
-  $params['access_token'] = main_config("github_api");
+  $params['access_token'] = main_config("github_token");
   $params_parsed          = http_build_query($params);
 
   $url = "https://api.github.com/repos/". $url ."?". $params_parsed;
