@@ -5,7 +5,7 @@ include_once('./config/main.php');
 /*
 Returns config variables for the Blockchain settings
 */
-function blockchain_config( $config_name )
+function bc_config( $config_name )
 {
   global $blockchain_main;
   return $blockchain_main[$config_name];
